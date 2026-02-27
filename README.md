@@ -172,3 +172,5 @@ MIT License --- open for academic and personal use.
 This project focuses on clear signal processing, reproducibility, and
 extensibility. It is intended as a foundation for wearable motion
 analysis and fatigue estimation systems.
+
+** AI aided in the writing of only this README
