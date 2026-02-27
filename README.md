@@ -31,14 +31,14 @@ This repository aims to:
 
 ## Core Functionality
 
--   Removes unstable start/end seconds from raw motion data\
--   Smooths noisy accelerometer signals\
--   Detects rep boundaries using valleys in motion magnitude\
+-   Removes unstable start/end seconds from raw motion data
+-   Smooths noisy accelerometer signals
+-   Detects rep boundaries using valleys in motion magnitude
 -   Computes features per rep:
-    -   Rep interval (time between reps)\
-    -   Rep range (bottom → top movement magnitude)\
-    -   Rep depth (minimum acceleration magnitude)\
--   Normalizes features\
+    -   Rep interval (time between reps)
+    -   Rep range (bottom → top movement magnitude)
+    -   Rep depth (minimum acceleration magnitude)
+-   Normalizes features
 -   Computes a simple fatigue score
 
 ------------------------------------------------------------------------
@@ -54,13 +54,12 @@ This repository aims to:
     │   ├── fatigue_model.py           # scoring
     │   └── pipeline.py                # single entry point pipeline
     │
-    ├── notebooks/                     # experiments and visualizations
+    ├── notebooks/                     # experiments and 
     ├── data/                          # example input datasets
     ├── results/                       # generated plots & outputs
     ├── tests/                         # automated unit tests
     ├── requirements.txt               # needed Python libraries
-    ├── README.md
-    └── .gitignore
+    └── README.md
 
 ------------------------------------------------------------------------
 
@@ -90,20 +89,17 @@ print(rep_df.head())
 
 This returns a DataFrame with one row per rep, including:
 
-  ------------------------------------------------------------------------------------
-  rep_in_set   rep_interval   rep_depth   range_a   norm_time   norm_range   fatigue
-  ------------ -------------- ----------- --------- ----------- ------------ ---------
 
-  ------------------------------------------------------------------------------------
+  rep_in_set |  rep_interval |  rep_depth |  range_a  |  norm_time  | norm_range |  fatigue
 
 ------------------------------------------------------------------------
 
 ## Output Interpretation
 
--   rep_interval --- time duration between consecutive reps\
--   rep_depth --- acceleration magnitude at the bottom of the rep\
--   range_a --- acceleration range (bottom → maximum)\
--   norm_time / norm_range --- normalized features\
+-   rep_interval --- time duration between consecutive reps
+-   rep_depth --- acceleration magnitude at the bottom of the rep
+-   range_a --- acceleration range (bottom → maximum)
+-   norm_time / norm_range --- normalized features
 -   fatigue --- combined indicator that tends to increase as reps
     progress
 
@@ -116,7 +112,7 @@ indicating growing fatigue.
 
 Automated tests ensure correct feature extraction and stable behavior:
 
-``` bash
+``` 
 pytest
 ```
 
@@ -132,17 +128,17 @@ Tested modules include:
 ## Future Directions
 
 This system is intentionally modular and can be extended in several
-directions:
+directions.
 
 ### Machine Learning
 
-Train models to classify fatigue level instead of using a hand-built
+Train models to classify fatigue levels, rep failure, etc instead of using a hand-built
 formula.
 
 ### Wearable Integration
 
 Port feature extraction to a real-time Wear OS or smartwatch
-application.
+application. -- in progress*
 
 ### Personalization
 
@@ -160,9 +156,9 @@ analytics.
 
 Contributions are welcome. Possible improvements include:
 
--   Supporting additional exercises\
--   Improving segmentation robustness\
--   Adding new fatigue indicators\
+-   Supporting additional exercises
+-   Improving segmentation robustness
+-   Adding new fatigue indicators
 -   Integrating ML-based classification
 
 ------------------------------------------------------------------------
