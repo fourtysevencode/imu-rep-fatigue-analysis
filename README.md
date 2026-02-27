@@ -54,7 +54,7 @@ This repository aims to:
     │   ├── fatigue_model.py           # scoring
     │   └── pipeline.py                # single entry point pipeline
     │
-    ├── notebooks/                     # experiments and 
+    ├── notebooks/                     # experiments and visualization
     ├── data/                          # example input datasets
     ├── results/                       # generated plots & outputs
     ├── tests/                         # automated unit tests
@@ -118,9 +118,9 @@ pytest
 
 Tested modules include:
 
--   compute_range\
--   compute_rep_intervals\
--   Rep detection sanity checks\
+-   compute_range
+-   compute_rep_intervals
+-   Rep detection sanity checks
 -   Pipeline integration
 
 ------------------------------------------------------------------------
