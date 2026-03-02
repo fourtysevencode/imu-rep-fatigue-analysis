@@ -2,6 +2,8 @@
 
 Automated rep segmentation and fatigue scoring from smartphone IMU data.
 
+Limitations and Observations: Inter-user variability made consistent fatigue trends difficult to detect. Future work includes improved feature extraction and possible sensor fusion.
+
 This repository provides a complete signal processing pipeline that
 takes accelerometer data from a phone, detects exercise repetitions
 (reps), extracts meaningful features per rep, and computes a fatigue
