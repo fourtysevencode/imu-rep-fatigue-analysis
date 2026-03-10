@@ -1,7 +1,7 @@
-from preprocessing import load_csv, compute_magnitude, trim_edges, smooth_signal
-from rep_detection import detect_valleys
-from feature_extraction import compute_rep_intervals, compute_range
-from fatigue_model import compute_fatigue
+from src.preprocessing import load_csv, compute_magnitude, trim_edges, smooth_signal
+from src.rep_detection import detect_valleys
+from src.feature_extraction import compute_rep_intervals, compute_range
+from src.fatigue_model import compute_fatigue
 import pandas as pd
 
 def run_pipeline(path, set_id, exercise, age, date):
