@@ -5,7 +5,7 @@ def compute_rep_intervals(time_array, valleys):
     intervals = []
     for i in range(len(time_stamp)):
         intervals.append(time_stamp.iloc[0] if i==0 else time_stamp.iloc[i] - time_stamp.iloc[i-1])
-        return intervals
+    return intervals
 
 def compute_range(valleys, a_smooth):
 

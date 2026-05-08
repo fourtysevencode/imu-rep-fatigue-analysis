@@ -3,9 +3,10 @@ from src.rep_detection import detect_valleys
 from src.feature_extraction import compute_rep_intervals, compute_range
 from src.fatigue_model import compute_fatigue
 import pandas as pd
+import datetime
 
 def run_pipeline(path, set_id, exercise, age, date):
-    df = load_csv(path)
+    df = pd.read_csv(path)
     #df = compute_magnitude(df)   -- uncomment if a_mag not present in df
     df = trim_edges(df)
 
@@ -13,11 +14,12 @@ def run_pipeline(path, set_id, exercise, age, date):
 
     valleys = detect_valleys(df["a_smooth"])
 
-    intervals = compute_rep_intervals(df["time"].values, valleys)
+    intervals = compute_rep_intervals(df["time"], valleys)
 
-    ranges = compute_range(valleys, df['a_smooth'.values])
+    ranges = compute_range(valleys, df['a_smooth'])
 
     intervals = intervals[:-1] #drop last interval, last valley doesn't correspond to any range
+    valleys = valleys[:-1] #trim valleys to match intervals and ranges
 
     rep_df = pd.DataFrame({
         # metadata
@@ -28,7 +30,7 @@ def run_pipeline(path, set_id, exercise, age, date):
         "date": pd.to_datetime(date, dayfirst = True),
         #features
         "rep_in_set": range(1, len(intervals)+1),
-        "rep_interval": intervals[:-1], 
+        "rep_interval": intervals, 
         "rep_depth": df['a_smooth'][valleys],
         "range_a": ranges
     })
